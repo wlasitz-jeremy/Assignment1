@@ -1,10 +1,46 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ScrollView, Pressable,TextInput } from "react-native";
+import { SymbolView } from "expo-symbols";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-      <Text>This is our application!</Text>
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.header}>
+          <View style={styles.headerIcons}>
+          <SymbolView name={{ ios: "menucard", android: "menu", web: "menu" }} tintColor="black" size={60}/>
+          <Text style={styles.headerTitle}>Welcome</Text>
+          <SymbolView name={{ ios: "mappin", android: "location_on", web: "pin" }} tintColor="black" size={60}/>
+          </View>
+          <View style={styles.headerUserName}>
+            <Text style={styles.userName}>Smeagol Reagol Rolkien Tolkien</Text>
+          </View>
+          <View style={styles.headerSearchBarContainer}>
+            <View style={styles.quickSearchContainer}>
+              <SymbolView name={{ ios: "magnifyingglass", android: "search", web: "search" }} tintColor="black" size={20}/>
+              <TextInput placeholder="Quick Search" style={styles.quickSearch}/>
+            </View>
+            <View style={styles.gameSearchContainer}>
+              <TextInput placeholder="Game" style={styles.gameSearch}/>
+              <SymbolView name={{ ios: "chevron.down", android: "keyboard_arrow_down" }} tintColor="black" size={20}/>
+            </View>
+          </View>
+        </View>
+        <ScrollView style={styles.content}>
+          <View style={styles.scrollcontent}>
+            <Pressable onPress={() => alert("Alert button pressed!")}>
+            <Text style={{ fontWeight: "bold" }}>Alert Button</Text>
+          </Pressable>
+          </View>
+        </ScrollView>
+        <View style={styles.footer}>
+          <SymbolView name={{ ios: "house", android: "home", web: "home" }} tintColor="black"/>
+          <SymbolView name={{ ios: "camera", android: "camera", web: "camera" }} tintColor="black"/>
+          <SymbolView name={{ ios: "magnifyingglass", android: "search", web: "search" }} tintColor="black"/>
+          <SymbolView name={{ ios: "book", android: "book", web: "book" }} tintColor="black"/>
+          </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
@@ -13,5 +49,93 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+  },
+  header: {
+    height: 160,
+    width: "100%",
+  },
+  headerIcons: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 25,
+  },
+  headerTitle: {
+    fontFamily: "Oswald",
+    fontSize: 46,
+    fontWeight: "bold",
+    color: "#000000",
+  },
+  headerUserName: {
+    width: "100%",
+    alignItems: "center",
+  },
+  userName: {
+    fontFamily: "Oswald",
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#000000",
+    marginVertical: 15,
+  },
+  headerSearchBarContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    alignSelf: "center",
+    marginHorizontal: 50,
+    marginBottom: 10,
+  },
+  quickSearchContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 10,
+    borderColor: "#000000",
+    borderWidth: 2,
+    borderRadius: 20,
+    paddingHorizontal: 10,
+  },
+  quickSearch: {
+    fontFamily: "Souliyo Unicode",
+    fontSize: 12,
+    color: "#000000",
+    flex: 1,
+  },
+  gameSearchContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 10,
+    borderWidth: 2,
+    borderColor: "#000000",
+    borderRadius: 20,
+    marginRight: 40,
+    paddingHorizontal: 10,
+    position: "absolute",
+    right: -40,
+  },
+  gameSearch: {
+    fontFamily: "Souliyo Unicode",
+    fontSize: 12,
+    fontWeight: "regular",
+    color: "#000000",
+    justifyContent: "center",
+  },
+  content: {
+    width: "100%",
+    height: "100%",
+  },
+  scrollcontent: {
+    width: "100%",
+    alignItems: "center",
+  },
+  footer: {
+    height: 78.5,
+    width: "80%",
+    backgroundColor: "#E2E1F4",
+    borderWidth: 1,
+    marginBottom: 25,
+    borderRadius: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 30,
   },
 });
