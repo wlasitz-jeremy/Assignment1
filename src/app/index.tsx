@@ -10,24 +10,45 @@ import { SymbolView } from "expo-symbols";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import CardBox from "../../componets/CardBox";
 
+{/*
+  Card Box assets, All images are stored in the 
+  assets folder and pulled from to the Cardbox 
+  component to created the card image carousel. 
+  */}
+
+{/*Pokemon Card Image Carousel */}  
 const pokemonCardImages = [
   require("../../assets/pokemonCards/pikachu_image.png"),
   require("../../assets/pokemonCards/arceus_image.png"),
   require("../../assets/pokemonCards/g_image.png"),
 ];
 
+{/*Magic Card Image Carousel */}  
 const magicCardImages = [
   require("../../assets/magicCards/magic1.png"),
   require("../../assets/magicCards/magic2.png"),
   require("../../assets/magicCards/magic3.png"),
 ];
 
+{/*Riftbound Card Image Carousel */}  
 const riftboundCardImages = [
   require("../../assets/riftboundCards/r1.png"),
   require("../../assets/riftboundCards/r2.png"),
   require("../../assets/riftboundCards/r3.png"),
 ];
 
+{/*Index Page layout and assets.
+  Includes: 
+  Page Header
+    Title with Menu and Locations pin icons
+  Search base with overlapping Filterbar
+  Alert Button
+    Alert pop up when alert button has been clicked
+  Bottom Navigation bar with Icons
+    Home Button
+    Camera Button
+    Search Function
+    Library*/}  
 export default function Index() {
   return (
     <SafeAreaProvider>
@@ -109,6 +130,7 @@ export default function Index() {
   );
 }
 
+{/*General style layout for the Index page only.*/}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
