@@ -15,7 +15,6 @@ type Props = {
 export default function cardBox({ images }: Props) {
   return (
     <SafeAreaView>
-      {/* <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}> */}
       <View style={styles.imageCarousel}>
         <View style={styles.arrowButton}>
           <Text style={styles.arrow}>‹</Text>
@@ -34,7 +33,6 @@ export default function cardBox({ images }: Props) {
           ))}
         </View>
       </View>
-      {/* </ScrollView> */}
     </SafeAreaView>
   );
 }
@@ -46,7 +44,7 @@ const styles = StyleSheet.create({
     borderRadius: 7.5,
     padding: 4,
     marginTop: 15,
-    marginRight: 5,
+    marginRight: 15,
     resizeMode: "cover",
   },
 
@@ -86,8 +84,9 @@ const styles = StyleSheet.create({
   },
 
   imageRow: {
-    width: 75,
-    height: 75,
+    // width: 30,
+    // height: 50,
+    marginLeft: 15,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",

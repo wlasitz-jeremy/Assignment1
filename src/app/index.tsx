@@ -14,24 +14,18 @@ const pokemonCardImages = [
   require("../../assets/pokemonCards/pikachu_image.png"),
   require("../../assets/pokemonCards/arceus_image.png"),
   require("../../assets/pokemonCards/g_image.png"),
-  require("../../assets/pokemonCards/Victini_image.png"),
-  require("../../assets/pokemonCards/Zeraora_Image.png"),
 ];
 
 const magicCardImages = [
   require("../../assets/magicCards/magic1.png"),
   require("../../assets/magicCards/magic2.png"),
   require("../../assets/magicCards/magic3.png"),
-  require("../../assets/magicCards/magic4.png"),
-  require("../../assets/magicCards/magic5.png"),
 ];
 
 const riftboundCardImages = [
   require("../../assets/riftboundCards/r1.png"),
   require("../../assets/riftboundCards/r2.png"),
   require("../../assets/riftboundCards/r3.png"),
-  require("../../assets/riftboundCards/r4.png"),
-  require("../../assets/riftboundCards/r5.png"),
 ];
 
 export default function Index() {
