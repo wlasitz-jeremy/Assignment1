@@ -2,6 +2,7 @@ import {
   Image,
   ImageSourcePropType,
   StyleSheet,
+  ScrollView,
   Text,
   View,
 } from "react-native";
@@ -18,11 +19,11 @@ export default function cardBox({ images }: Props) {
         <View style={styles.arrowButton}>
           <Text style={styles.arrow}>‹</Text>
         </View>
-        <View style={styles.imageRow}>
+        <ScrollView style={styles.imageRow}>
           {images.map((image, Index) => (
             <Image key={Index} source={image} style={styles.cardImage} />
           ))}
-        </View>
+        </ScrollView>
         <View style={styles.arrowButton}>
           <Text style={styles.arrow}>›</Text>
         </View>
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
 
   imageCarousel: {
     width: 350,
-    height: 100,
+    height: 150,
     position: "relative",
     flexDirection: "row",
     alignItems: "center",
