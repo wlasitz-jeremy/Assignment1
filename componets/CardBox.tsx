@@ -15,15 +15,16 @@ type Props = {
 export default function cardBox({ images }: Props) {
   return (
     <SafeAreaView>
+      {/* <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}> */}
       <View style={styles.imageCarousel}>
         <View style={styles.arrowButton}>
           <Text style={styles.arrow}>‹</Text>
         </View>
-        <ScrollView style={styles.imageRow}>
+        <View style={styles.imageRow}>
           {images.map((image, Index) => (
             <Image key={Index} source={image} style={styles.cardImage} />
           ))}
-        </ScrollView>
+        </View>
         <View style={styles.arrowButton}>
           <Text style={styles.arrow}>›</Text>
         </View>
@@ -33,14 +34,15 @@ export default function cardBox({ images }: Props) {
           ))}
         </View>
       </View>
+      {/* </ScrollView> */}
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   cardImage: {
-    width: 50,
-    height: 50,
+    width: 75,
+    height: 75,
     borderRadius: 7.5,
     padding: 4,
     marginTop: 15,
@@ -84,8 +86,8 @@ const styles = StyleSheet.create({
   },
 
   imageRow: {
-    width: 30,
-    height: 50,
+    width: 75,
+    height: 75,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
