@@ -1,6 +1,38 @@
-import { Text, View, StyleSheet, ScrollView, Pressable,TextInput } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  ScrollView,
+  Pressable,
+  TextInput,
+} from "react-native";
 import { SymbolView } from "expo-symbols";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import CardBox from "../../componets/CardBox";
+
+const pokemonCardImages = [
+  require("../../assets/pokemonCards/pikachu_image.png"),
+  require("../../assets/pokemonCards/arceus_image.png"),
+  require("../../assets/pokemonCards/g_image.png"),
+  require("../../assets/pokemonCards/Victini_image.png"),
+  require("../../assets/pokemonCards/Zeraora_Image.png"),
+];
+
+const magicCardImages = [
+  require("../../assets/magicCards/magic1.png"),
+  require("../../assets/magicCards/magic2.png"),
+  require("../../assets/magicCards/magic3.png"),
+  require("../../assets/magicCards/magic4.png"),
+  require("../../assets/magicCards/magic5.png"),
+];
+
+const riftboundCardImages = [
+  require("../../assets/riftboundCards/r1.png"),
+  require("../../assets/riftboundCards/r2.png"),
+  require("../../assets/riftboundCards/r3.png"),
+  require("../../assets/riftboundCards/r4.png"),
+  require("../../assets/riftboundCards/r5.png"),
+];
 
 export default function Index() {
   return (
@@ -8,37 +40,78 @@ export default function Index() {
       <SafeAreaView style={styles.container}>
         <View style={styles.header}>
           <View style={styles.headerIcons}>
-          <SymbolView name={{ ios: "menucard", android: "menu", web: "menu" }} tintColor="black" size={60}/>
-          <Text style={styles.headerTitle}>Welcome</Text>
-          <SymbolView name={{ ios: "mappin", android: "location_on", web: "pin" }} tintColor="black" size={60}/>
+            <SymbolView
+              name={{ ios: "menucard", android: "menu", web: "menu" }}
+              tintColor="black"
+              size={60}
+            />
+            <Text style={styles.headerTitle}>Welcome</Text>
+            <SymbolView
+              name={{ ios: "mappin", android: "location_on", web: "pin" }}
+              tintColor="black"
+              size={60}
+            />
           </View>
           <View style={styles.headerUserName}>
             <Text style={styles.userName}>Smeagol Reagol Rolkien Tolkien</Text>
           </View>
           <View style={styles.headerSearchBarContainer}>
             <View style={styles.quickSearchContainer}>
-              <SymbolView name={{ ios: "magnifyingglass", android: "search", web: "search" }} tintColor="black" size={20}/>
-              <TextInput placeholder="Quick Search" style={styles.quickSearch}/>
+              <SymbolView
+                name={{
+                  ios: "magnifyingglass",
+                  android: "search",
+                  web: "search",
+                }}
+                tintColor="black"
+                size={20}
+              />
+              <TextInput
+                placeholder="Quick Search"
+                style={styles.quickSearch}
+              />
             </View>
+
             <View style={styles.gameSearchContainer}>
-              <TextInput placeholder="Game" style={styles.gameSearch}/>
-              <SymbolView name={{ ios: "chevron.down", android: "keyboard_arrow_down" }} tintColor="black" size={20}/>
+              <TextInput placeholder="Game" style={styles.gameSearch} />
+              <SymbolView
+                name={{ ios: "chevron.down", android: "keyboard_arrow_down" }}
+                tintColor="black"
+                size={20}
+              />
             </View>
           </View>
+        </View>
+        <View>
+          <CardBox images={pokemonCardImages} />
+          <CardBox images={magicCardImages} />
+          <CardBox images={riftboundCardImages} />
         </View>
         <ScrollView style={styles.content}>
           <View style={styles.scrollcontent}>
             <Pressable onPress={() => alert("Alert button pressed!")}>
-            <Text style={{ fontWeight: "bold" }}>Alert Button</Text>
-          </Pressable>
+              <Text style={{ fontWeight: "bold" }}>Alert Button</Text>
+            </Pressable>
           </View>
         </ScrollView>
         <View style={styles.footer}>
-          <SymbolView name={{ ios: "house", android: "home", web: "home" }} tintColor="black"/>
-          <SymbolView name={{ ios: "camera", android: "camera", web: "camera" }} tintColor="black"/>
-          <SymbolView name={{ ios: "magnifyingglass", android: "search", web: "search" }} tintColor="black"/>
-          <SymbolView name={{ ios: "book", android: "book", web: "book" }} tintColor="black"/>
-          </View>
+          <SymbolView
+            name={{ ios: "house", android: "home", web: "home" }}
+            tintColor="black"
+          />
+          <SymbolView
+            name={{ ios: "camera", android: "camera", web: "camera" }}
+            tintColor="black"
+          />
+          <SymbolView
+            name={{ ios: "magnifyingglass", android: "search", web: "search" }}
+            tintColor="black"
+          />
+          <SymbolView
+            name={{ ios: "book", android: "book", web: "book" }}
+            tintColor="black"
+          />
+        </View>
       </SafeAreaView>
     </SafeAreaProvider>
   );

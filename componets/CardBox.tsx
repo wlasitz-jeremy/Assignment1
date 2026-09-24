@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#aaa5c8",
     borderRadius: 10,
-    marginTop: 20,
-    marginBottom: 15,
+    // marginTop: 2,
+    marginBottom: 5,
 
     // IOS shadows
     shadowColor: "#30275c",
