@@ -82,13 +82,11 @@ export default function Index() {
             </View>
           </View>
         </View>
-        <View>
-          <CardBox images={pokemonCardImages} />
-          <CardBox images={magicCardImages} />
-          <CardBox images={riftboundCardImages} />
-        </View>
         <ScrollView style={styles.content}>
           <View style={styles.scrollcontent}>
+            <CardBox images={pokemonCardImages} />
+            <CardBox images={magicCardImages} />
+            <CardBox images={riftboundCardImages} />
             <Pressable onPress={() => alert("Alert button pressed!")}>
               <Text style={{ fontWeight: "bold" }}>Alert Button</Text>
             </Pressable>
@@ -126,6 +124,7 @@ const styles = StyleSheet.create({
   header: {
     height: 160,
     width: "100%",
+    paddingTop: 68,
   },
   headerIcons: {
     flexDirection: "row",
