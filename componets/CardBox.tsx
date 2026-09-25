@@ -8,10 +8,14 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+//props for the CardBox component
 type Props = {
+  // An array of image sources to display in the carousel.
   images: ImageSourcePropType[];
 };
 
+/* Renders an image carousel within a styled card box. 
+Includes left/right navigation arrows and pagination dots.*/
 export default function cardBox({ images }: Props) {
   return (
     <SafeAreaView>
@@ -38,6 +42,7 @@ export default function cardBox({ images }: Props) {
 }
 
 const styles = StyleSheet.create({
+  //images
   cardImage: {
     width: 75,
     height: 75,
@@ -48,12 +53,21 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
   },
 
+  imageRow: {
+    // width: 30,
+    // height: 50,
+    marginLeft: 15,
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+  },
+
   innerShadow: {
     position: "absolute",
     shadowOffset: { width: 3, height: 4 },
     shadowOpacity: 0.12,
   },
-
+  //carousel
   imageCarousel: {
     width: 350,
     height: 150,
@@ -83,14 +97,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 
-  imageRow: {
-    // width: 30,
-    // height: 50,
-    marginLeft: 15,
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "row",
-  },
+  // nav arrows
   arrowButton: {
     width: 25,
     height: 40,
@@ -102,7 +109,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     color: "#111111",
   },
-
+  // dots
   dots: {
     position: "absolute",
     bottom: 10,
